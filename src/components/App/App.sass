@@ -1,0 +1,41 @@
+.App
+  display: flex
+  flex-direction: column
+  align-items: center
+  padding: rem(20)
+  color: $color_black
+  font-family: $fontFamily_secondary
+
+
+  &-Title
+    margin-top: 0
+    margin-bottom: rem(16)
+    font-size: rem(40)
+    font-weight: 400
+
+
+  &-Subtitle
+    margin-top: 0
+    margin-bottom: rem(40)
+    font-size: rem(32)
+    font-weight: 400
+
+
+  &-Icon
+    width: rem(200)
+    height: rem(200)
+    animation: App-Rotate 12s infinite linear
+    fill: $color_ocean
+
+
+  &-Image
+    width: rem(200)
+    height: auto
+
+
+@keyframes App-Rotate
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)

@@ -1,0 +1,383 @@
+options:
+  merge-default-rules: false
+
+files:
+  include:
+    - 'src/*.+(sass|scss)'
+    - 'src/components/**/*.+(sass|scss)'
+
+rules:
+  attribute-quotes:
+    - 2
+    - include: true
+
+  border-zero:
+    - 2
+    - convention: 'none'
+
+  brace-style:
+    - 2
+    -
+      style: '1tbs'
+      allow-single-line: false
+
+  class-name-format:
+    - 2
+    -
+      allow-leading-underscore: true
+      convention:  (?!^.*(\-[a-z]|\-{2,}|_{2,}|_[A-Z]|\-.*\-|_.*_.*_).*$)^[A-Z][A-Za-z\-_]+$
+      convention-explanation: "Must to be 'Component-Element_modKey_modValue' templated"
+
+  clean-import-paths:
+    - 2
+    -
+      leading-underscore: false
+      filename-extension: false
+
+  declarations-before-nesting: 2
+
+  empty-args:
+    - 2
+    - include: true
+
+  empty-line-between-blocks:
+    - 2
+    -
+      include: true
+      allow-single-line-rulesets: false
+
+  extends-before-declarations: 2
+  extends-before-mixins: 2
+
+  final-newline:
+    - 2
+    - include: true
+
+  force-attribute-nesting: 1
+  force-element-nesting: 2
+  force-pseudo-nesting: 1
+
+  function-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'camelcase'
+
+  hex-length:
+    - 2
+    - style: 'long'
+
+  hex-notation:
+    - 2
+    - style: 'lowercase'
+
+  id-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'camelcase'
+
+  indentation:
+    - 2
+    - size: 2
+
+  leading-zero:
+    - 2
+    - include: true
+
+  max-file-line-count:
+    - 1
+    - length: 300
+
+  max-line-length:
+    - 1
+    - length: 80
+
+  mixin-name-format:
+    - 2
+    -
+      allow-leading-underscore: false
+      convention: 'camelcase'
+
+  nesting-depth:
+    - 1
+    - max-depth: 4
+
+  no-color-hex: 1
+  no-color-keywords: 2
+
+  no-color-literals:
+    - 2
+    -
+      allow-map-identifiers: true
+      allow-rgba: true
+      allow-variable-identifiers: true
+
+  no-css-comments: 2
+  no-debug: 2
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-extends: 2
+  no-ids: 2
+  no-important: 2
+  no-invalid-hex: 2
+
+  no-misspelled-properties:
+    - 1
+    - extra-properties: 'scrollbar-width'
+  
+  no-qualifying-elements: 2
+  no-trailing-whitespace: 2
+  no-trailing-zero: 2
+  no-transition-all: 2
+  no-url-domains: 2
+  no-warn: 2
+  one-declaration-per-line: 2
+  pseudo-element: 2
+
+  quotes:
+    - 2
+    - style: 'single'
+
+  shorthand-values: 1
+  single-line-per-selector: 2
+
+  space-after-colon:
+    - 2
+    - include: true
+
+  space-after-comma:
+    - 2
+    - include: true
+
+  space-around-operator:
+    - 2
+    - include: true
+
+  space-before-brace:
+    - 2
+    - include: true
+
+  space-before-colon:
+    - 2
+    - include: false
+
+  space-between-parens:
+    - 2
+    - include: false
+
+  trailing-semicolon:
+    - 2
+    - include: true
+
+  url-quotes: 2
+
+  zero-unit:
+    - 2
+    - include: false
+
+  property-sort-order:
+    - 2
+    -
+      order:
+        - 'position'
+        - 'z-index'
+        - 'top'
+        - 'right'
+        - 'bottom'
+        - 'left'
+        - 'order'
+        - 'justify-self'
+        - 'align-self'
+
+        - 'display'
+        - 'visibility'
+        - 'float'
+        - 'clear'
+        - 'clip'
+        - 'zoom'
+        - 'overflow'
+        - 'overflow-x'
+        - 'overflow-y'
+        - 'flex-direction'
+        - 'flex-wrap'
+        - 'grid-template-columns'
+        - 'grid-template-rows'
+        - 'grid-template-areas'
+        - 'grid-template'
+        - 'grid-column-gap'
+        - 'grid-row-gap'
+        - 'grid-gap'
+        - 'grid-auto-columns'
+        - 'grid-auto-rows'
+        - 'grid-auto-flow'
+        - 'grid'
+        - 'justify-items'
+        - 'align-items'
+        - 'justify-content'
+        - 'align-content'
+        
+        - 'flex-grow'
+        - 'flex-shrink'
+        - 'flex-basis'
+        - 'flex'
+        - 'grid-column-start'
+        - 'grid-column-end'
+        - 'grid-row-start'
+        - 'grid-row-end'
+        - 'grid-column'
+        - 'grid-row'
+        - 'grid-area'
+        - 'box-sizing'
+        - 'width'
+        - 'min-width'
+        - 'max-width'
+        - 'height'
+        - 'min-height'
+        - 'max-height'
+        - 'padding'
+        - 'padding-top'
+        - 'padding-right'
+        - 'padding-bottom'
+        - 'padding-left'
+        - 'margin'
+        - 'margin-top'
+        - 'margin-right'
+        - 'margin-bottom'
+        - 'margin-left'
+        
+        - 'table-layout'
+        - 'empty-cells'
+        - 'caption-side'
+        - 'border-spacing'
+        - 'border-collapse'
+        - 'list-style'
+        - 'list-style-position'
+        - 'list-style-type'
+        - 'list-style-image'
+        
+        - 'content'
+        - 'quotes'
+        - 'counter-reset'
+        - 'counter-increment'
+        - 'resize'
+        - 'cursor'
+        - 'pointer-events'
+        - 'user-select'
+        - 'scrollbar-width'
+        - 'nav-index'
+        
+        - 'transition'
+        - 'transition-delay'
+        - 'transition-timing-function'
+        - 'transition-duration'
+        - 'transition-property'
+        - 'transform'
+        - 'transform-origin'
+        - 'animation'
+        - 'animation-name'
+        - 'animation-duration'
+        - 'animation-play-state'
+        - 'animation-timing-function'
+        - 'animation-delay'
+        - 'animation-iteration-count'
+        - 'animation-iteration-count'
+        - 'animation-direction'
+        - 'backface-visibility'
+        - 'will-change'
+        
+        - 'opacity'
+        - 'color'
+        - 'fill'
+        - 'border'
+        - 'border-collapse'
+        - 'border-width'
+        - 'border-style'
+        - 'border-color'
+        - 'border-top'
+        - 'border-top-width'
+        - 'border-top-style'
+        - 'border-top-color'
+        - 'border-right'
+        - 'border-right-width'
+        - 'border-right-style'
+        - 'border-right-color'
+        - 'border-bottom'
+        - 'border-bottom-width'
+        - 'border-bottom-style'
+        - 'border-bottom-color'
+        - 'border-left'
+        - 'border-left-width'
+        - 'border-left-style'
+        - 'border-left-color'
+        - 'border-radius'
+        - 'border-top-left-radius'
+        - 'border-top-right-radius'
+        - 'border-bottom-right-radius'
+        - 'border-bottom-left-radius'
+        - 'border-image'
+        - 'border-image-source'
+        - 'border-image-slice'
+        - 'border-image-width'
+        - 'border-image-outset'
+        - 'border-image-repeat'
+        - 'outline'
+        - 'outline-width'
+        - 'outline-style'
+        - 'outline-color'
+        - 'outline-offset'
+        - 'background'
+        - 'background-color'
+        - 'background-image'
+        - 'background-repeat'
+        - 'background-attachment'
+        - 'background-position'
+        - 'background-position-x'
+        - 'background-position-y'
+        - 'background-clip'
+        - 'background-origin'
+        - 'background-size'
+        - 'box-decoration-break'
+        - 'box-shadow'
+        - 'filter'
+        
+        - 'white-space'
+        - 'vertical-align'
+        - 'text-align'
+        - 'text-align-last'
+        - 'text-decoration'
+        - 'text-emphasis'
+        - 'text-emphasis-color'
+        - 'text-emphasis-style'
+        - 'text-emphasis-position'
+        - 'text-indent'
+        - 'text-justify'
+        - 'text-transform'
+        - 'text-shadow'
+        - 'text-outline'
+        - 'text-transform'
+        - 'text-wrap'
+        - 'text-overflow'
+        - 'text-overflow-ellipsis'
+        - 'text-overflow-mode'
+        - 'letter-spacing'
+        - 'word-spacing'
+        - 'word-wrap'
+        - 'word-break'
+        - 'tab-size'
+        - 'hyphens'
+        
+        - 'font'
+        - 'font-family'
+        - 'font-size'
+        - 'font-weight'
+        - 'font-style'
+        - 'font-variant'
+        - 'font-size-adjust'
+        - 'font-stretch'
+        - 'font-effect'
+        - 'font-emphasize'
+        - 'font-emphasize-position'
+        - 'font-emphasize-style'
+        - 'font-smooth'
+        - 'line-height'

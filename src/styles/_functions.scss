@@ -1,0 +1,17 @@
+@function rem($size) {
+  @if unitless($size) {
+    $remSize: $size / $baseFontSize;
+    @return #{$remSize}rem;
+  } @else {
+    @error 'Size must be a unitless number.';
+  }
+}
+
+
+@function srtipNumber($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}

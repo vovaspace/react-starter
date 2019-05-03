@@ -1,0 +1,10 @@
+// Visually hidden
+.h-visuallyHidden {
+  @include hide();
+}
+
+
+// Nowrap
+.h-nowrap {
+  white-space: nowrap;
+}

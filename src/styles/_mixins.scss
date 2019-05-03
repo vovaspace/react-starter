@@ -1,0 +1,85 @@
+// Hide
+@mixin hide() {
+  position: absolute;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  border: none;
+}
+
+
+// Placeholder
+@mixin placeholder($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+}
+
+
+// iOS text input fix
+@mixin fixIosTextInput ($is-border-radius: true) {
+  @if not $is-border-radius {
+    border-radius: 0;
+  }
+  -webkit-appearance: none;
+}
+
+
+// Absolute full size
+@mixin absoluteFullSize() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+// Hide scrollbar
+// Don't forget to add 'overflow-y: hidden' to parent element.
+@mixin hideScrollbar() {
+  padding-bottom: rem(20);
+  margin-bottom: rem(-20);
+
+  scrollbar-width: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+// Adaptive aspect ratio
+@mixin adaptiveAspectRatio($x, $y) {
+  $ratio: $y / $x * 100%;
+
+  &::before {
+    display: block;
+
+    height: 0;
+    padding-bottom: $ratio;
+
+    content: '';
+  }
+}

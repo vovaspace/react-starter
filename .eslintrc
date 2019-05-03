@@ -1,0 +1,18 @@
+extends: 'airbnb'
+env:
+  browser: true
+  node: true
+  es6: true
+rules:
+  import/no-extraneous-dependencies:
+    - 'error'
+    - devDependencies: true
+      optionalDependencies: false
+      peerDependencies: false
+  comma-dangle: ['error', 'never']
+  object-curly-newline:
+    - 'error'
+    - ObjectExpression: { multiline: true, consistent: true }
+      ObjectPattern: { multiline: true, consistent: true }
+      ImportDeclaration: { multiline: true, consistent: true }
+      ExportDeclaration: { multiline: true, consistent: true, minProperties: 3 }

@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+
+  font-family: $fontFamily_primary;
+  font-size: $baseFontSize * 1px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+
+button {
+  cursor: pointer;
+}
