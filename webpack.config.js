@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
   const isDev = env === 'development';
@@ -84,26 +85,13 @@ module.exports = (env) => {
 
         // Fonts
         {
-          test: /resources\/fonts\/.*\.(ttf|woff|woff2)$/,
+          test: /\.(ttf|woff|woff2)$/,
           use: [
             {
               loader: 'file-loader',
               options: {
                 name: '[name].[ext]',
                 outputPath: './assets/fonts/'
-              }
-            }
-          ]
-        },
-
-        // Copy assets
-        {
-          test: /resources\/copy\/.*$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: '[name].[ext]'
               }
             }
           ]
@@ -117,7 +105,18 @@ module.exports = (env) => {
       }),
       new MiniCssExtractPlugin({
         filename: 'app.css'
-      })
+      }),
+      new CopyPlugin([
+        {
+          from: 'src/resources/assets',
+          to: 'assets'
+        },
+        {
+          from: 'src/resources/root',
+          to: '',
+          flatten: true
+        }
+      ])
     ],
     watch: isDev,
     devServer: {
